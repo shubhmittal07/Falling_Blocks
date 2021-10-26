@@ -2,7 +2,7 @@
 
 public class Player : MonoBehaviour
 {
-    public float speed = 7f;
+    public int speed;
     float screenHalfunits;
     float screenWidth;
     public CameraShake camShake;
@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
     {
         screenHalfunits = Camera.main.aspect * Camera.main.orthographicSize;
         screenWidth = Screen.width;
+        speed = PlayerPrefs.GetInt("senstivity");
+        Debug.Log(speed);
     }
     // Update is called once per frame
     void Update()
